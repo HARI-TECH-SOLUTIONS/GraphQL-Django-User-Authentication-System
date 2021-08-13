@@ -1,0 +1,44 @@
+1.For user Registration :
+-----------------------
+
+mutation {
+  register(
+    username: "user1",
+  	password1: "welcome@123",
+    password2: "welcome@123"
+    email: "user1@gmail.com",
+  ){
+    success
+    errors
+    token
+    refreshToken
+  }
+}
+
+
+2.For user login :
+----------------
+
+mutation{
+  tokenAuth(username: "user1", password: "welcome@123"){
+    success,
+    errors,
+    user{
+      username,
+      firstName,
+      lastName
+    }
+  }
+}
+
+
+3.For Update user details:
+----------------------
+
+mutation{
+  updateAccount(firstName: "fname")
+  {
+    success
+    errors
+  }
+}
